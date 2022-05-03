@@ -1,11 +1,11 @@
 {
     "manifest_version": 3,
-    "name": "GmailJS Node Boilerplate Extension",
-    "short_name": "gmailjsnode",
-    "version": "1.1",
-    "author": "Jostein Kjønigsen <jostein@kjonigsen.net>",
+    "name": "Hoxhunt Hunter Extension",
+    "short_name": "hoxhunt-hunter",
+    "version": "1.0",
+    "author": "Mark Peterson <mark.peterson@docusign.com>",
 
-    "description": "A minimal extension which demonstrates how to create a extension with Gmail.JS and NodeJS-based bundling.",
+    "description": "A Gmail message scanner to detect Hoxhunt training emails",
 
     "content_scripts": [
         {
