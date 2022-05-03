@@ -1,6 +1,6 @@
 {
-  "name": "gmailjs-node-boilerplate",
-  "version": "1.1.0",
+  "name": "hoxhunt-hunter",
+  "version": "1.0.0",
   "description": "",
   "main": "",
   "scripts": {
@@ -10,7 +10,7 @@
     "devbuild": "cp ../gmail.js/src/gmail.js node_modules/gmail-js/src/ && npm run build",
     "build": "npm run stage && npm run bundle"
   },
-  "author": "Jostein kjønigsen",
+  "author": "Jostein kjønigsen and Mark Peterson",
   "license": "ISC",
   "dependencies": {
     "gmail-js": "^1.0.0",
