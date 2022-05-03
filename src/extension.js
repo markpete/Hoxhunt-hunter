@@ -12,21 +12,26 @@ const loaderId = setInterval(() => {
 
 // actual extension-code
 function startExtension(gmail) {
-    console.log("Extension loading...");
     window.gmail = gmail;
 
     gmail.observe.on("load", () => {
-        const userEmail = gmail.get.user_email();
-        console.log("Hello, " + userEmail + ". This is your extension talking!");
-
         gmail.observe.on("view_email", (domEmail) => {
             console.log("Looking at email:", domEmail);
             const emailData = gmail.new.get.email_data(domEmail);
             console.log("Email data:", emailData);
-        });
-
-        gmail.observe.on("compose", (compose) => {
-            console.log("New compose window is opened!", compose);
+            const subject = emailData.subject;
+            const src_promise = gmail.get.email_source_promise(domEmail);
+            src_promise.then((src) => {
+                if (src.indexOf("X-Hox-") > -1) {
+                    console.log("Hoxhunt");
+                    let h2_list = document.getElementsByTagName("h2");
+                    [...h2_list].forEach((item) => {
+                        if(item.innerText === subject) {
+                            item.innerText = "🐷🐷🐷WARNING: Hoxhunt mail🐷🐷🐷";
+                        }
+                    })
+                }
+            });
         });
     });
 }

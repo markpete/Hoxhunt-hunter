@@ -1,11 +1,11 @@
 
-# GmailJS Node boilerplate
-
-![Node.js CI](https://github.com/josteink/gmailjs-node-boilerplate/workflows/Node.js%20CI/badge.svg)
+# Detects Gmail Hoxhunt training mails
 
 This repo contains sample code to get a WebExtensions-based
 browser-extension using
 the [gmail.js](https://github.com/KartikTalwar/gmail.js/) library.
+
+Created from https://github.com/josteink/gmailjs-node-boilerplate
 
 ## Usage
 
@@ -13,10 +13,10 @@ First get the code and build it:
 
 ````
 # get code
-git clone https://github.com/josteink/gmailjs-node-boilerplate/
+git clone https://github.com/markpete/Hoxhunt-hunter
 
 # get deps and build
-cd gmailjs-node-boilerplate
+cd Hosthunt-hunter
 npm install
 # ensure you're running latest version!
 npm update
