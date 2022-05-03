@@ -26,23 +26,9 @@ npm run build
 Now ensure the code loads and works:
 
 * Load the folder containing the extension (`manifest.json`) in
-your browser.
-* Load `mail.google.com` in your browser and open the developer console.
-
-You should be greeted by a message saying the following
-
-    Hello, <you>. This is your extension talking!
-
-If that works, you should now be ready to customize the
-extension-code. Do this by editing `extension.js` and rerunning `npm run build`. 
-
-You can also interact with a instance of Gmail.js ready for use. `gmail`
-should already be exposed in the developer console as a global
-variable.
-
-You can use this to get familiar with the API.
-
-Cheers!
+your browser using Developer Mode in the extension window.
+* Load `mail.google.com` in your browser
+* Open a Hoxhunt training email and the message header is replaced by a warning that this is a Hoxhunt mail.
 
 ## Disclaimer
 
