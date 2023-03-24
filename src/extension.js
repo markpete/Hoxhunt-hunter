@@ -26,7 +26,7 @@ function startExtension(gmail) {
                     console.log("Hoxhunt");
                     let h2_list = document.getElementsByTagName("h2");
                     [...h2_list].forEach((item) => {
-                        if(item.innerText === subject) {
+                        if(item.innerText.replace(/\s+/g, '') === subject.replace(/\s+/g, '')) {
                             item.innerText = "🐷🐷🐷WARNING: Hoxhunt mail🐷🐷🐷";
                         }
                     })
