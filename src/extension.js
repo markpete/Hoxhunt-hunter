@@ -12,6 +12,7 @@ const loaderId = setInterval(() => {
 
 // actual extension-code
 function startExtension(gmail) {
+    console.log("Extension loading...");
     window.gmail = gmail;
 
     gmail.observe.on("load", () => {
