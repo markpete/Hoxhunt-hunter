@@ -1,6 +1,6 @@
 {
   "name": "hoxhunt-hunter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "",
   "scripts": {
@@ -17,6 +17,6 @@
     "jquery": "^4.0.0-beta"
   },
   "devDependencies": {
-    "esbuild": "^0.16.0"
+    "esbuild": "^0.23.0"
   }
 }
