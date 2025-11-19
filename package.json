@@ -1,6 +1,6 @@
 {
   "name": "hoxhunt-hunter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "",
   "scripts": {
@@ -13,10 +13,10 @@
   "author": "Jostein kjønigsen and Mark Peterson",
   "license": "ISC",
   "dependencies": {
-    "gmail-js": "^1.1.14",
-    "jquery": "^4.0.0-beta"
+    "gmail-js": "^1.1.16",
+    "jquery": "^4.0.0-rc.1"
   },
   "devDependencies": {
-    "esbuild": "^0.23.0"
+    "esbuild": "^0.27.0"
   }
 }
