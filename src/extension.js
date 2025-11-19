@@ -3,7 +3,7 @@
 const hoxhuntTriggers = ["X-Hox", "hoxhunt", "huntsigning", "hox.marker"];
 var gSrc = "";
 
-const dlog(data) {
+const dlog = (data) => {
     if (DEBUG) {
         console.log(data);
     }
