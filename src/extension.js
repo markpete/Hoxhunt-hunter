@@ -3,9 +3,9 @@
 const hoxhuntTriggers = ["X-Hox", "hoxhunt", "huntsigning", "hox.marker"];
 var gSrc = "";
 
-const debug = (data) => {
+const debug = (...args) => {
     if (DEBUG) {
-        console.log(data);
+        console.log(...args);
     }
 }
 
