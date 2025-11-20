@@ -3,6 +3,12 @@
 const hoxhuntTriggers = ["X-Hox", "hoxhunt", "huntsigning", "hox.marker"];
 var gSrc = "";
 
+const debug = (...args) => {
+    if (DEBUG) {
+        console.log(...args);
+    }
+}
+
 // loader-code: wait until gmailjs has finished loading, before triggering actual extensiode-code.
 const loaderId = setInterval(() => {
     if (!window._gmailjs) {
@@ -19,20 +25,20 @@ const IncludesArrayItem = (item) => {
 
 // actual extension-code
 function startExtension(gmail) {
-    console.log("Extension loading...");
+    debug("Extension loading...");
     window.gmail = gmail;
 
     gmail.observe.on("load", () => {
         gmail.observe.on("view_email", (domEmail) => {
-            console.log("Looking at email:", domEmail);
+            debug("Looking at email:", domEmail);
             const emailData = gmail.new.get.email_data(domEmail);
-            console.log("Email data:", emailData);
+            debug("Email data:", emailData);
             const subject = emailData.subject;
             const src_promise = gmail.get.email_source_promise(domEmail);
             src_promise.then((src) => {
                 gSrc = src;
                 if (hoxhuntTriggers.map(IncludesArrayItem).includes(true)) {
-                    console.log("Hoxhunt mail detected");
+                    debug("Hoxhunt mail detected");
                     let h2_list = document.getElementsByTagName("h2");
                     [...h2_list].forEach((item) => {
                         if(item.innerText.replace(/\s+/g, '') === subject.replace(/\s+/g, '')) {
