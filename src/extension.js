@@ -3,7 +3,7 @@
 const hoxhuntTriggers = ["X-Hox", "hoxhunt", "huntsigning", "hox.marker"];
 var gSrc = "";
 
-const dlog = (data) => {
+const debug = (data) => {
     if (DEBUG) {
         console.log(data);
     }
@@ -25,20 +25,20 @@ const IncludesArrayItem = (item) => {
 
 // actual extension-code
 function startExtension(gmail) {
-    dlog("Extension loading...");
+    debug("Extension loading...");
     window.gmail = gmail;
 
     gmail.observe.on("load", () => {
         gmail.observe.on("view_email", (domEmail) => {
-            dlog("Looking at email:", domEmail);
+            debug("Looking at email:", domEmail);
             const emailData = gmail.new.get.email_data(domEmail);
-            dlog("Email data:", emailData);
+            debug("Email data:", emailData);
             const subject = emailData.subject;
             const src_promise = gmail.get.email_source_promise(domEmail);
             src_promise.then((src) => {
                 gSrc = src;
                 if (hoxhuntTriggers.map(IncludesArrayItem).includes(true)) {
-                    dlog("Hoxhunt mail detected");
+                    debug("Hoxhunt mail detected");
                     let h2_list = document.getElementsByTagName("h2");
                     [...h2_list].forEach((item) => {
                         if(item.innerText.replace(/\s+/g, '') === subject.replace(/\s+/g, '')) {
