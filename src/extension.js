@@ -10,17 +10,16 @@ const debug = (...args) => {
 }
 
 // loader-code: wait until gmailjs has finished loading, before triggering actual extensiode-code.
-const loaderId = setInterval(() => {
-    if (!window._gmailjs) {
-        return;
-    }
-
-    clearInterval(loaderId);
+if (window._gmailjs) {
     startExtension(window._gmailjs);
-}, 100);
+} else {
+    window.addEventListener("GmailJSReady", () => {
+        startExtension(window._gmailjs);
+    });
+}
 
 const IncludesArrayItem = (item) => {
-    return(gSrc.indexOf(item) > -1);
+    return (gSrc.indexOf(item) > -1);
 }
 
 // actual extension-code
@@ -40,12 +39,15 @@ function startExtension(gmail) {
                 if (hoxhuntTriggers.map(IncludesArrayItem).includes(true)) {
                     debug("Hoxhunt mail detected");
                     let h2_list = document.getElementsByTagName("h2");
+                    const normalizedSubject = subject.replace(/\s+/g, '');
                     [...h2_list].forEach((item) => {
-                        if(item.innerText.replace(/\s+/g, '') === subject.replace(/\s+/g, '')) {
+                        if (item.innerText.replace(/\s+/g, '') === normalizedSubject) {
                             item.innerText = "🐷🐷🐷WARNING: Hoxhunt mail🐷🐷🐷";
                         }
                     })
                 }
+            }).catch((err) => {
+                debug("Error getting email source:", err);
             });
         });
     });
