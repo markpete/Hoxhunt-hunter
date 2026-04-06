@@ -1,6 +1,6 @@
 {
   "name": "hoxhunt-hunter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "",
   "scripts": {
@@ -15,9 +15,9 @@
   "license": "ISC",
   "dependencies": {
     "gmail-js": "^1.1.16",
-    "jquery": "^4.0.0-rc.1"
+    "jquery": "^4.0.0"
   },
   "devDependencies": {
-    "esbuild": "^0.27.0"
+    "esbuild": "^0.28.0"
   }
 }
