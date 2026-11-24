@@ -30,6 +30,12 @@ your browser using Developer Mode in the extension window.
 * Load `mail.google.com` in your browser
 * Open a Hoxhunt training email and the message header is replaced by a warning that this is a Hoxhunt mail.
 
+## Experience
+
+Once you side-load and enable the extension in your browser, anytime you load a Hoxhunt email, the title of the message will change to notify you that the mail is a Hoxhunt trainer.
+
+![WARNING: Hoxhunt mail](./images/Hoxhunt-detected.png)
+
 ## Disclaimer
 
 This project first and foremost about learning. It is **NOT** set up or configured as one would typically create a production WebExtension, and there are several things which can be changed or improved in how things are built and packaged. 
