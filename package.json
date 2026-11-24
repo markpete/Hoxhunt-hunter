@@ -14,8 +14,8 @@
   "author": "Jostein kjønigsen and Mark Peterson",
   "license": "ISC",
   "dependencies": {
-    "gmail-js": "^1.1.16",
-    "jquery": "^4.0.0"
+    "gmail-js": "^1.1.17",
+    "jquery": "^4.1.0"
   },
   "devDependencies": {
     "esbuild": "^0.28.0"
